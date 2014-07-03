@@ -12,4 +12,5 @@ done
 
 convert $dir/*crop-0.png -page $res $dir.pdf
 
+echo "Generated $dir.pdf"
 
