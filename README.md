@@ -1,4 +1,4 @@
-= Reveal.js To PDF
+# Reveal.js To PDF
 
 Converts a Reveal.js script to PDF.
 
