@@ -1,7 +1,7 @@
 #!/bin/zsh
 # requires zsh and imagemagick
 
-if [[ $# -lt 1 ]]; then echo "need 2 args"; return 1; fi
+if [[ $# -lt 1 ]]; then echo "need a dir name"; return 1; fi
 
 dir=$1
 res=1440x900
