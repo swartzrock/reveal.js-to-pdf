@@ -37,7 +37,7 @@ Browser.drive {
   go url
   fullScreen()
   while (idx++ < MAX_SLIDES) {
-    sleep $SLEEP_MS
+    sleep SLEEP_MS
     report sprintf("slide_%04d", idx)
     if (!hasMore()) break
     nextSlide()
