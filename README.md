@@ -6,6 +6,10 @@ Converts a Reveal.js script to PDF.
 * Crops images to 1440x900 and converts to PDF with ImageMagick
 * Based on the original script by Dan Allen (https://github.com/mojavelinux/dzslides)
 
+## How To Use
+    
+    groovy slides2png.groovy <url>
+    
 
 ## Requirements
 
