@@ -44,7 +44,7 @@ Browser.drive {
   }
 }.quit()
 
-"png2pdf.sh ${dirName}".execute()
+"bin/png2pdf.sh ${dirName}".execute()
 
 println "Rendered ${idx} slides to ${dirName}.pdf"
 
