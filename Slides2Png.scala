@@ -4,7 +4,7 @@
 scalaVersion := "2.11.1"
 
 libraryDependencies ++= Seq(
-  "org.seleniumhq.selenium" % "selenium-java" % "2.42.2",
+  "org.seleniumhq.selenium" % "selenium-java" % "2.53.0",
   "org.scalatest" % "scalatest_2.11" % "2.2.0"
 )
 */
@@ -33,7 +33,7 @@ def renderSlidesToImages(url: String, dirName: String): Int = {
     val slide = "slide_%04d.png" format slides.size
     screenshot(slide)
     val allSlides = slide :: slides
-    
+
     if (hasRightRoute && allSlides.size < MAX_SLIDES) {
       nextSlide
       renderSlide(allSlides)
@@ -50,7 +50,7 @@ def renderSlidesToImages(url: String, dirName: String): Int = {
   close()
 
   slides.size
-}  
+}
 
 
 def renderSlidesToPDF(url: String) {
@@ -58,18 +58,15 @@ def renderSlidesToPDF(url: String) {
   val count = renderSlidesToImages(url, dirName)
 
   val script = s"bin/png2pdf.sh $dirName"
-  sys.process.Process(script).run  
+  sys.process.Process(script).run
   println(s"Rendered $count slides")
 }
 
 
 // Entry point for our script
 args.toList match {
-  case List(x) => 
+  case List(x) =>
     renderSlidesToPDF(x)
-  case _ => 
+  case _ =>
     System.err.println("usage: Slides2Png.scala <url>")
 }
-
-
-
