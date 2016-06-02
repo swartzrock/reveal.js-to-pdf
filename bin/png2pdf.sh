@@ -4,13 +4,9 @@
 if [[ $# -lt 1 ]]; then echo "need a dir name"; return 1; fi
 
 dir=$1
-res=1440x900
 
-for png in $dir/*.png ; do
-  convert $png -crop $res ${png/.png/_crop.png}
-done
+JPEG_QUALITY=50
 
-convert $dir/*crop-0.png -page $res $dir.pdf
+convert $dir/*.png -quality $JPEG_QUALITY $dir.pdf
 
 echo "Generated $dir.pdf"
-
