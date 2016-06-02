@@ -13,6 +13,8 @@ import org.scalatest._
 import org.scalatest.selenium._
 import scala.annotation.tailrec
 
+val presentationDim = new org.openqa.selenium.Dimension(1440,900)
+
 
 def renderSlidesToImages(url: String, dirName: String): Int = {
 
@@ -45,7 +47,7 @@ def renderSlidesToImages(url: String, dirName: String): Int = {
 
   setCaptureDir(dirName)
   go to url
-  fullscreen
+  webDriver.manage.window.setSize(presentationDim)
   val slides = renderSlide(Nil)
   close()
 
