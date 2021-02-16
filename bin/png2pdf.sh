@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 # requires zsh and imagemagick
 
 if [[ $# -lt 1 ]]; then echo "need a dir name"; return 1; fi
